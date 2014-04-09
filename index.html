@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SwingMap</title>
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+		<style>
+			.map {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+			}
+
+			h4 {
+				color:white;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="map" id="map">
+			<h1 class="text-center">Loading map...</h1>
+		</div>
+
+		<div id="app">
+			<nav class="navbar navbar-default navbar-fixed-bottom navbar-inverse" role="navigation">
+				<div class="container-fluid">
+					<div class="col-md-6">
+						<h4>Swing Map</h4>
+					</div>
+					<div class="col-md-6 text-right">
+						<h4>Built by <a href="http://danielwylie.me">Daniel Wylie</a> and powered by <a href="http://hoistapps.com">Hoist</a></h4>
+					</div>
+				</div>
+			</nav>
+		</div>
+
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js"></script>
+		<script src="//code.hoi.io/hoist.js"> </script>
+ 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgBwNk-ttVb973ZQdY6odqHtNv9rv2Tyc&sensor=true"></script>
+		<script src="app.js"> </script>
+		<script src="auth.js"> </script>
+
+		<script type="text/javascript">
+			Hoist.apiKey("MWCWMKUAZDHITCGXGWRC");
+
+			var app, auth;
+			$(function(){			
+				app = new SwingMap();
+				ko.applyBindings(app, document.getElementById('app'));
+				app.start();
+			});
+		</script>
+	</body>
+</html>
